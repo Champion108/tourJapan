@@ -1,11 +1,22 @@
 .slides{
-    width: 500%;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: row;
+    overflow: hidden;
+    position:relative;
+}
+.slided{
+    min-width: 500%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    position:relative;
+    transition: 0.5s;
 }
 .slide-cont{
-    width: 20%;
+    min-width: 20%;
     height: 100%;
     position: relative;
 }
@@ -38,6 +49,8 @@
 }
 .card .txt-hid{
     display: none;
+    padding: 5px 8%;
+    padding-top:0 ;
 }
 .card .rm-btn{
     display: flex;
@@ -51,4 +64,31 @@
     position: relative;
     left:180px;
     margin-bottom: 12px;
+}
+.slide-btns{
+    position: absolute;
+    bottom:2%;
+    left:50%;
+    transform: translateX(-50%);
+    width: 320px;
+    height: 9px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.slide-btn{
+    width: 50px;
+    height: 9px;
+    background-color: rgba(0, 0, 0, 0.408);
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.slide-btn:hover{
+    border: 2px solid #ffffff;
+}
+
+.slide-active{
+    transition: 0.4s;
+    background-color: #ffffffaa;
 }
