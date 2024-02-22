@@ -1,0 +1,18 @@
+@font-face {
+    font-family: mangoBlack;
+    src: url('../fonts/BlackMango-Light.ttf');
+}
+
+.logo{
+    color:#000;
+    font-family: mangoBlack;
+    font-size: 2.4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo .highlight{
+    color: #f00;
+    font-size: 1.2em;
+}

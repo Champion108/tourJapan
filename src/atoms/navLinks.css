@@ -1,0 +1,21 @@
+.nav-link{
+    transition: 0.5s;
+    color:#444;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor:pointer;
+    height: 90%;
+    margin: 2px 20px;
+    margin-left: 0px;
+    padding:10px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-link a{
+    color:#555;
+    text-decoration: none;
+}
+.nav-link a span .icon{
+   position: relative;
+   top:2px;
+}
