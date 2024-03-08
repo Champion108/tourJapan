@@ -22,7 +22,7 @@ export default function Video(){
    return(
         <section className='video-box'>
             <div className='video'>
-            <video ref={videoRef} preload="auto" autoplay="autoplay" muted="muted" loop="loop" className='main-video'> 
+            <video ref={videoRef} preload="auto" autoPlay="autoplay" muted="muted" loop="loop" className='main-video'> 
 			    <source src={image1} />
 		    </video>
             </div>

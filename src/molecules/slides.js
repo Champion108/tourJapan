@@ -7,7 +7,39 @@ import img6 from '../img/3227293fb65326cb3c7a8fc5639bbc0f.jpg';
 import './slides.css'
 
 export default function Slides(props){ 
-   
+
+    let cnt = 0;
+    let aplay;
+    
+    function startanimation(){
+    aplay = setInterval(() =>{
+
+      if(cnt<4)
+      cnt++;  
+      else cnt=0;
+    
+      let old = document.getElementsByClassName("slide-active")[0];
+      old.classList.remove("slide-active");
+      
+      let s = document.getElementsByClassName("slide-btn")[cnt];
+      s.classList.add("slide-active"); 
+
+      let o = document.getElementsByClassName("slideactive")[0];
+      o.classList.remove("slideactive");
+      o.classList.add("sliderev");
+
+      let k = document.getElementsByClassName("slide-cont")[cnt];
+      k.classList.add("slideactive");
+
+      setTimeout(function() {
+         let h = document.getElementsByClassName("sliderev")[0];
+         h.classList.remove("sliderev");
+      }, 500);
+
+    }, 5000);  
+   }
+
+   startanimation();
 
    const readmore = (ind) => {
       let s = document.getElementsByClassName("txt-hid")[ind];
@@ -22,19 +54,36 @@ export default function Slides(props){
         y.innerHTML = "Read Less";
     };
 
-    const bringSlide = (ind) => {
+    const bringSlide = (ind) => {   
       
-      let old = document.getElementsByClassName("slide-active")[0];
-      old.classList.remove("slide-active");
-      
+     /* if(fncl === 0){
+         clearInterval(aplay);
+         fncl=1;
+      } */
 
+      let old = document.getElementsByClassName("slide-active")[0];
       let s = document.getElementsByClassName("slide-btn")[ind];
+      if(old!==s){ 
+      old.classList.remove("slide-active");
       s.classList.add("slide-active"); 
 
-      let k = document.getElementsByClassName("slided")[0];
-      let x = 100 * ind;
-      let fin = "-"+x+"%";
-      k.style.left = fin;
+      let o = document.getElementsByClassName("slideactive")[0];
+      o.classList.remove("slideactive");
+      o.classList.add("sliderev");
+
+      let k = document.getElementsByClassName("slide-cont")[ind];
+      k.classList.add("slideactive");
+      
+      cnt = ind;
+      clearInterval(aplay);
+      startanimation();
+
+
+      setTimeout(function() {
+         let h = document.getElementsByClassName("sliderev")[0];
+         h.classList.remove("sliderev");
+      }, 600);
+      }
     };
 
    return(
@@ -42,7 +91,7 @@ export default function Slides(props){
             
           <div className='slided'>
 
-            <div className='slide-cont'>
+            <div className='slide-cont slideactive'>
                <img alt="slide1" src={img2} className="slide"></img>
                <div className='card'>
                   <h1 className='tlt'>Hiroshaki castle</h1>
