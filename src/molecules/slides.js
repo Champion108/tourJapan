@@ -1,21 +1,21 @@
-import React from 'react';
+import {React} from 'react';
 import img2 from '../img/R.jpg';
-import img4 from '../img/wp4331305.jpg';
-import img3 from '../img/276590.jpg';
+import img4 from '../img/tokyotower.jpg';
+import img3 from '../img/narapark.jpg';
 import img5 from '../img/R (1).jpg';
 import img6 from '../img/3227293fb65326cb3c7a8fc5639bbc0f.jpg';
 import './slides.css'
 
-export default function Slides(props){ 
+export default function Slides(){ 
 
-    let cnt = 0;
+    let cnt=0;
     let aplay;
     
     function startanimation(){
-    aplay = setInterval(() =>{
+      aplay = setInterval(() =>{
 
       if(cnt<4)
-      cnt++;  
+         cnt++; 
       else cnt=0;
     
       let old = document.getElementsByClassName("slide-active")[0];
@@ -24,17 +24,9 @@ export default function Slides(props){
       let s = document.getElementsByClassName("slide-btn")[cnt];
       s.classList.add("slide-active"); 
 
-      let o = document.getElementsByClassName("slideactive")[0];
-      o.classList.remove("slideactive");
-      o.classList.add("sliderev");
-
-      let k = document.getElementsByClassName("slide-cont")[cnt];
-      k.classList.add("slideactive");
-
-      setTimeout(function() {
-         let h = document.getElementsByClassName("sliderev")[0];
-         h.classList.remove("sliderev");
-      }, 500);
+      let slided = document.getElementsByClassName('slided')[0];
+      let lft = cnt*100;
+      slided.style.left = "-"+lft+"%"; 
 
     }, 5000);  
    }
@@ -55,35 +47,19 @@ export default function Slides(props){
     };
 
     const bringSlide = (ind) => {   
-      
-     /* if(fncl === 0){
-         clearInterval(aplay);
-         fncl=1;
-      } */
-
       let old = document.getElementsByClassName("slide-active")[0];
       let s = document.getElementsByClassName("slide-btn")[ind];
-      if(old!==s){ 
+      
       old.classList.remove("slide-active");
       s.classList.add("slide-active"); 
 
-      let o = document.getElementsByClassName("slideactive")[0];
-      o.classList.remove("slideactive");
-      o.classList.add("sliderev");
+      let slided = document.getElementsByClassName('slided')[0];
+      let lft = ind*100;
+      slided.style.left = "-"+lft+"%"; 
 
-      let k = document.getElementsByClassName("slide-cont")[ind];
-      k.classList.add("slideactive");
-      
       cnt = ind;
       clearInterval(aplay);
       startanimation();
-
-
-      setTimeout(function() {
-         let h = document.getElementsByClassName("sliderev")[0];
-         h.classList.remove("sliderev");
-      }, 600);
-      }
     };
 
    return(
@@ -91,7 +67,7 @@ export default function Slides(props){
             
           <div className='slided'>
 
-            <div className='slide-cont slideactive'>
+            <div className='slide-cont'>
                <img alt="slide1" src={img2} className="slide"></img>
                <div className='card'>
                   <h1 className='tlt'>Hiroshaki castle</h1>
@@ -107,11 +83,16 @@ export default function Slides(props){
             <div className='slide-cont'>
                <img alt="slide2" src={img3} className="slide"></img>
                <div className='card'>
-                  <h1 className='tlt'>Kyoto</h1>
-                  <p className='txt'>Kyoto, a city steeped in history and culture, offers a plethora of captivating experiences. Start your journey by marveling at the magnificent Golden Pavilion (Kinkaku-ji), a Zen Buddhist temple adorned with gold leaf.
-                   Visit Daitoku-ji and Wander through the peaceful grounds and immerse yourself in the contemplative atmosphere.  </p>
-                  <p className='txt-hid'> Wander through the peaceful grounds and immerse yourself in the contemplative atmosphere.Other highlights include Kiyomizu-dera,and various exquisite Japanese gardens like Ryōan-ji, Tenryū-ji, and Kodai-ji.
-                  </p>
+                  <h1 className='tlt'>Nara National Park</h1>
+                  <p className='txt'>Nara National Park, located in the Kansai region of Japan, is a serene and
+                   culturally rich natural reserve. Renowned for its majestic scenery, the park is home to ancient
+                    temples, lush forests, and tranquil lakes. </p>
+                    <p className='txt-hid'> Visitors are captivated by the park's centerpiece, 
+                    Mount Yoshino, 
+                    famous for its picturesque cherry blossoms during the spring season.
+                    Additionally, the park encompasses significant historical sites,
+                   including the UNESCO World Heritage-listed Todai-ji Temple, housing the Great Buddha statue.</p>
+                  
                   <div className='rm-btn' onClick={() => readmore(1)}>Read More</div>
                </div>
             </div>

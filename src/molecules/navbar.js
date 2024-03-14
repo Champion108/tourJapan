@@ -6,6 +6,7 @@ import { TbWorld } from "react-icons/tb";
 import { IoMdSearch } from "react-icons/io";
 import { FaBars } from "react-icons/fa6";
 import './navbar.css'
+import { FaCaretDown } from 'react-icons/fa';
 
 export default function Navbar(){
     
@@ -39,7 +40,7 @@ export default function Navbar(){
         <Logo className="head-logo"></Logo>
         <div className='cont2'>
             <a href='#search' className='logolink'><IoMdSearch className="sicon"/></a>
-            <a href='#language' className='logolink'><TbWorld className="sicon"/></a>
+            <a href='#language' className='logolink'><TbWorld className="sicon"/><span><FaCaretDown className='world-dropdown'/></span></a>
         </div>
         </div>
     </div>

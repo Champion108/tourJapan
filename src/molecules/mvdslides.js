@@ -19,14 +19,14 @@ export default function headtext(){
       let lft = 0;
 
       const next = () => {
-        if(lft!== 150){
-        lft= lft+25;
+        if(lft !== 6){
+        lft++;
         let f = document.getElementsByClassName('mvdslides')[0];
-        f.style.left = "-"+lft+"%";
+        f.style.left = "-"+lft*270+"px";
         let h= document.getElementsByClassName("mvdicons")[0];
         h.style.color = "#5a5a5a";
         }
-        else{
+        if(lft>=6 ){
           let f= document.getElementsByClassName("mvdicons")[1];
           f.style.color = "#adadad";
         }
@@ -34,14 +34,14 @@ export default function headtext(){
 
       const prev = () =>{
         if(lft !== 0){
-        lft= lft-25;
+        lft--;
         let f = document.getElementsByClassName('mvdslides')[0];
-        f.style.left = "-"+lft+"%";
+        f.style.left = "-"+lft*270+"px";
         
         let h= document.getElementsByClassName("mvdicons")[1];
         h.style.color = "#5a5a5a";
         }
-        else{
+        if(lft <=0){
           let f= document.getElementsByClassName("mvdicons")[0];
           f.style.color = "#adadad";
         }
