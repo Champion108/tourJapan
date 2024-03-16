@@ -33,8 +33,11 @@
     color: #eee;
 }
 @media only screen and (max-width: 1040px) {
+    .video-box{
+        height: 77vh;
+    }
     .video{
-        height: 92%;
+        height: 98%;
         width: 92%;
     }
     .play-button{
@@ -45,8 +48,11 @@
     }
 }
 @media only screen and (max-width: 850px) {
+    .video-box{
+        height: 73vh;
+    }
     .video{
-        height: 85%;
+        height: 92%;
         width: 92%;
     }
     .play-button{
@@ -82,13 +88,13 @@
         width: 100%;
     }
     .video{
-        height: 80%;
+        height: 95%;
         width: 92%;
     }
     .play-button{
         height: 60px;
         width: 60px;
-        top: 48%;
+        top: 56%;
         left: 12%;
     }
 }

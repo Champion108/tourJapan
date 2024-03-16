@@ -23,3 +23,11 @@
     position: relative;
     top:-6px;
 }
+@media only screen and(max-width:400px){
+    .nav-link{
+        font-size: 30px;
+    }
+    .nav-link a{
+        font-size: 30px;
+    }
+}

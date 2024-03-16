@@ -84,11 +84,11 @@
         position: absolute;
         background-color: #fff;
         flex-direction: column;
-        width: 90%;
+        width: 94.5%;
         top: 7.2vh;
+        left:0;
         align-items: flex-start;
-        transition: 0.6s;
-        z-index: -3;
+        padding-left: 5%;
     }
     .navlink{
         font-size: 1em;
@@ -105,5 +105,25 @@
     }
     .toggle{
         margin-left: 10px;
+    }
+    .cont1{
+        padding-left: 10px;
+    }
+}
+@media only screen and (max-width: 400px){
+    .navlink{
+        font-size: 0.8em;
+    }
+}
+@media only screen and (max-width:360px){
+    .logolink .sicon{
+        height: 1.4em;
+        width: 1.4em;
+    }
+}
+@media only screen and (max-width:295px){
+    .logolink .sicon{
+        height: 1.1em;
+        width: 1.1em;
     }
 }
