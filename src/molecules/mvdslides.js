@@ -19,20 +19,32 @@ export default function headtext(){
       let lft = 0;
 
       const next = () => {
-        if(lft !== 6){
-        lft++;
-        let f = document.getElementsByClassName('mvdslides')[0];
-        f.style.left = "-"+lft*270+"px";
-        let h= document.getElementsByClassName("mvdicons")[0];
-        h.style.color = "#5a5a5a";
-        }
-        if(lft>=6 ){
-          let f= document.getElementsByClassName("mvdicons")[1];
-          f.style.color = "#adadad";
+        let d = document.getElementsByClassName('mvdslider')[0];
+        let wdt = window.getComputedStyle(d).width;
+        let nV = parseFloat(wdt); 
+        let endPoint = lft*270 + nV;
+        if(endPoint <= 2700 ){
+          let f = document.getElementsByClassName('mvdslides')[0];
+          if(endPoint+270 <= 2700){
+          lft++;
+          f.style.left = "-"+lft*270+"px";
+          }
+          else{ 
+            var n = 2700 - nV;
+            f.style.left = "-"+n+"px";
+            let d= document.getElementsByClassName("mvdicons")[1];
+            d.style.color = "#adadad";
+          }
+          let h= document.getElementsByClassName("mvdicons")[0];
+          h.style.color = "#5a5a5a";
         }
       }
 
       const prev = () =>{
+      /*  let d = document.getElementsByClassName('mvdslider')[0];
+        let wdt = window.getComputedStyle(d).width;
+        let nV = parseFloat(wdt); 
+        let startPoint = lft*270 + nV;*/
         if(lft !== 0){
         lft--;
         let f = document.getElementsByClassName('mvdslides')[0];
