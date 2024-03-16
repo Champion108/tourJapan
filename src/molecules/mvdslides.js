@@ -24,9 +24,9 @@ export default function headtext(){
         let nV = parseFloat(wdt); 
         let endPoint = lft*270 + nV;
         if(endPoint <= 2700 ){
+          lft++;
           let f = document.getElementsByClassName('mvdslides')[0];
           if(endPoint+270 <= 2700){
-          lft++;
           f.style.left = "-"+lft*270+"px";
           }
           else{ 
@@ -35,16 +35,12 @@ export default function headtext(){
             let d= document.getElementsByClassName("mvdicons")[1];
             d.style.color = "#adadad";
           }
-          let h= document.getElementsByClassName("mvdicons")[0];
+          let h = document.getElementsByClassName("mvdicons")[0];
           h.style.color = "#5a5a5a";
         }
       }
 
       const prev = () =>{
-      /*  let d = document.getElementsByClassName('mvdslider')[0];
-        let wdt = window.getComputedStyle(d).width;
-        let nV = parseFloat(wdt); 
-        let startPoint = lft*270 + nV;*/
         if(lft !== 0){
         lft--;
         let f = document.getElementsByClassName('mvdslides')[0];
